@@ -1,4 +1,6 @@
-src/index.d.ts
-src/policies.ts
-src/service/*.d.ts
+src/*.d.ts
+!src/index.d.ts
+!src/region.d.ts
+src/generate/policies.ts
+src/action/*.d.ts
 node_modules

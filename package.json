@@ -1,6 +1,6 @@
 {
   "name": "@akishichinibu/aws-policy-types",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "run `npm run build` to generate the type definition.",
   "main": "./src/index.d.ts",
   "repository": {
@@ -10,9 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-node": "ts-node -r tsconfig-paths/register",
-    "prettier": "prettier --config .prettierrc 'src/generate.ts' 'src/utils.d.ts' --write",
-    "build": "npm run ts-node ./src/generate.ts",
-    "prepare": "npm run build minify"
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "build": "npm run ts-node ./src/generate/run.ts",
+    "prepare": "npm run build && npm run prettier"
   },
   "author": "akishichinibu@gmail.com",
   "license": "MIT",
