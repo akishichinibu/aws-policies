@@ -1,6 +1,8 @@
-src/*.d.ts
-!src/index.d.ts
-!src/region.d.ts
-src/generate/policies.ts
-src/action/*.d.ts
+lib/*.d.ts
+!lib/index.d.ts
+!lib/region.d.ts
+!lib/utils.d.ts
+src/policies.ts
+lib/action/*.d.ts
 node_modules
+package-lock.json

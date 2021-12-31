@@ -59,8 +59,10 @@ export type CharType =
   | 'Z'
   | DigitalType;
 
-type Join<D extends string, S extends (string | Join<string[], D>)[]> = S['length'] extends 1
+// @ts-ignore
+export type Join<D extends string, S extends (string | Join<string[], D>)[]> = S['length'] extends 1
   ? `${S[0]}`
   : S extends [infer First, ...infer Rest]
-  ? `${First}${D}${Join<D, Rest>}`
+  ? // @ts-ignore
+    `${First}${D}${Join<D, Rest>}`
   : '';

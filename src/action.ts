@@ -1,9 +1,9 @@
 import * as path from 'path';
-
 import { existsSync, writeFile, mkdir } from 'fs';
 import { promisify } from 'util';
+
 import { fetchPoliciesScript, Service } from './fetch';
-import { exportRoot, importState, normalToFileName, normalToImportName } from './utils';
+import { exportRoot, importStatement, normalToFileName, normalToImportName } from './utils';
 
 const actionGroupPrefix = new Set([
   'Put',
@@ -136,12 +136,12 @@ export async function generateActionDefinition() {
     const fp = path.join(folderPath, `${fn}.d.ts`);
     const task = promisify(writeFile)(fp, generateActionDefinitionFromService(service));
 
-    const importStatement = importState(`./${folderName}/${fn}`, {
+    const import_ = importStatement(`./${folderName}/${fn}`, {
       ActionWithPrefix: getExportTypeAlias(name),
       StringPrefix: getStringPrefixTypeAlias(name)
     });
 
-    actionImports.push(importStatement);
+    actionImports.push(import_);
     futures.push(task);
   }
 

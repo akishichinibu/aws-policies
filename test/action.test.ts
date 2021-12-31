@@ -1,4 +1,4 @@
-import { Action, Service, Arn } from "../src";
+import { Action, Service } from "lib";
 
 const a1: Action = "s3:Create*";
 const a2: Action = "dynamodb:CreateTable";
@@ -24,14 +24,3 @@ const a9: Service = "s3";
 
 // @ts-expect-error
 const a10: Service = "s4";
-
-
-// @ts-expect-error
-const arn1: Arn = "arn:s3";
-
-const arn2: Arn = "arn:aws:s3:::happy";
-
-// @ts-expect-error
-const arn3: Arn = "arn:aws:s3::happy";
-
-const arn4: Arn = "arn:aws:ec2:";

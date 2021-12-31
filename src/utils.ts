@@ -14,8 +14,8 @@ export function normalToImportName(name: string) {
 
 export const normalToFileName = (name: string) => name.toLowerCase().split(' ').join('-');
 
-export const exportRoot = path.dirname(__dirname);
+export const exportRoot = path.resolve(__dirname, '..', 'lib');
 
-export const importState = (from: string, alias: { [source: string]: string | null }) => {
+export const importStatement = (from: string, alias: { [source: string]: string | null }) => {
   return `import { ${Object.entries(alias).map(([k, v]) => (v ? `${k} as ${v}` : k))} } from "${from}";`;
 };

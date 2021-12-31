@@ -1,5 +1,4 @@
 import * as path from 'path';
-
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { fetchPoliciesScript } from './fetch';

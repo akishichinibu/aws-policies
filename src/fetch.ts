@@ -1,6 +1,5 @@
 import * as path from 'path';
 import * as http from 'http';
-
 import { existsSync, writeFile } from 'fs';
 import { promisify } from 'util';
 
